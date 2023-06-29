@@ -20,7 +20,15 @@ public class GenericController {
 
     private GenericService genericService;
     private ModelMapper modelMapper = new ModelMapper();
-
+    
+    /*
+    Autowired is a means to inject dependencies into a class, in this case the GenericController class.
+    These dependencies are defined in the package "SpringDooters" specifically "SpringConfig"
+    Here we're just using model mapper to map the DTO to the model and vice versa.
+    Elsewhere in the application, additional custom beans will be used to generate hashes
+    In other applications, since beans are essentially arbitrary in function, we can do literally anything with them.
+    Common functions include Spring's own security beans, password encryptors, and other common helper methods.
+    */
     @Autowired
     public GenericController(GenericService genericService, ModelMapper modelMapper) {
         this.genericService = genericService;
